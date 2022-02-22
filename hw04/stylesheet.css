@@ -1,0 +1,12 @@
+body {
+    padding: 1%;
+    background-image: linear-gradient(to right, lightblue , white);
+}
+
+h1, h2 {
+    font-family: "Verdana", Lucida Console, serif;
+}
+
+div {
+    font-family: "Verdana", Lucida Console, serif;
+}

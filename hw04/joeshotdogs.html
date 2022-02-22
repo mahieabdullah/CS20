@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Joe's Hotdog</title>
+        <link rel="stylesheet" href="stylesheet.css">
+
+        <script type="text/javascript">
+
+            // Tells the customer to prepare for order
+            alert("Welcome to Joe's Hotdog! Please specify your order");
+
+            // Constants for food, discount, and tax prices
+            const hot_dog_price = 3.75;
+            const fries_price = 2.00;
+            const soda_price = 1.80;
+            const special_offer_discount = 0.9;
+            const meals_tax = 1.0625;
+
+            // Variables for order and total cost calculation before tax
+            var num_hot_dogs;
+            num_hot_dogs = prompt("How many hotdogs would you like to order?");
+
+            var num_fries;
+            num_fries = prompt("How many fries would you like to order?");
+
+            var num_sodas;
+            num_sodas = prompt("How many sodas would you like to order?");
+
+            var subtotal;
+            subtotal = (num_hot_dogs * hot_dog_price)
+                + (num_fries * fries_price)
+                + (num_sodas * soda_price);
+
+            // Variables and constants for total cost calculation
+            const subtotal_before_tax = subtotal;
+            var discount_price = 0;
+            var discount_subtotal = 0;
+
+            if (subtotal_before_tax >= 20) {
+                discount_price = subtotal_before_tax * 0.1;
+                subtotal = (subtotal * special_offer_discount);
+                discount_subtotal = subtotal;
+            }
+
+            const tax = subtotal * 0.0625;
+            subtotal = subtotal * meals_tax;
+
+            const total_price = subtotal;
+        </script>
+    </head>
+    <body>
+        <div class="banner">
+            <h1>🍕 WELCOME TO JOE'S PIZZA 🍕</h1>
+        </div>
+        <div class="comments">
+            <p>Below are your order and your reciept.</p>
+            <p>Thank you and come again!</p>
+        </div>
+        <div class="order_and_reciept">
+            <div class="order_section">
+                <h2>ORDER</h2>
+                <div class="hotdogs">Hotdogs Ordered:
+                    <span id="hotdogs"></span>
+                </div>
+                <script>
+                    let hotdogs = num_hot_dogs;
+                    document.getElementById("hotdogs").innerHTML = hotdogs;
+                </script>
+                <div class="fries">Fries Ordered:
+                    <span id="fries"></span>
+                </div>
+                <script>
+                    let fries = num_fries;
+                    document.getElementById("fries").innerHTML = fries;
+                </script>
+                <div class="sodas">Sodas Ordered:
+                    <span id="sodas"></span>
+                </div>
+                <script>
+                    let sodas = num_sodas;
+                    document.getElementById("sodas").innerHTML = sodas;
+                </script>
+            </div>
+            <div class="reciept_section">
+                <h2>RECIEPT</h2>
+                <div class="sub_before_tax">Subtotal Before Tax:
+                    <span id="sub_before_tax"></span>
+                </div>
+                <script>
+                    let sub_before_tax = subtotal_before_tax.toFixed(2);
+                    document.getElementById("sub_before_tax").innerHTML
+                        = sub_before_tax;
+                </script>
+                <div class="sub_before_discount">Subtotal after 10% Discount
+                    (if applicable):
+                    <span id="sub_before_discount"></span>
+                </div>
+                <script>
+                    let sub_before_discount = discount_subtotal.toFixed(2);
+                    document.getElementById("sub_before_discount").innerHTML
+                        = sub_before_discount;
+                </script>
+                <div class="disc_amount">Discount Amount (if applicable):
+                    <span id="disc_amount"></span>
+                </div>
+                <script>
+                    let disc_amount = discount_price.toFixed(2);
+                    document.getElementById("disc_amount").innerHTML
+                        = disc_amount;
+                </script>
+                <div class="tax_amount">Tax Amount:
+                    <span id="tax_amount"></span>
+                </div>
+                <script>
+                    let tax_amount = tax.toFixed(2);
+                    document.getElementById("tax_amount").innerHTML
+                        = tax_amount;
+                </script>
+                <div class="total_amount">Total Cost:
+                    <span id="total_amount"></span>
+                </div>
+                <script>
+                    let total_amount = total_price.toFixed(2);
+                    document.getElementById("total_amount").innerHTML
+                        = total_amount;
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
