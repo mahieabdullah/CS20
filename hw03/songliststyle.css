@@ -1,0 +1,54 @@
+Record {
+    display: grid;
+    font-family: verdana;
+    border-bottom: 1px solid blue;
+    padding: 20px 30px;
+}
+
+Record Artists {
+    font-size: 17px;
+}
+
+Record SongTitle {
+    font-size: 37px;
+    font-weight: 700;
+}
+
+Record ArtistName:before {
+    content: "Artist: ";
+    font-weight: 700;
+}
+
+Record MultipleArtistName:before {
+    content: "Artists: ";
+    font-weight: 700;
+}
+
+Record FeatArtistName:before {
+    content: "Featured Artist: ";
+    font-weight: 700;
+}
+
+Record MultipleArtistNameFeatArtistName:before {
+    content: "Featured Artists: ";
+    font-weight: 700;
+}
+
+Record MusicGenre {
+    display: block;
+}
+
+Record MusicGenre:before {
+    content: "Music Genre: ";
+    font-weight: 700;
+}
+
+Record MultipleMusicGenre:before {
+    content: "Music Genres: ";
+    font-weight: 700;
+}
+
+Record ReleaseYr:before {
+    content: "Release Year: ";
+    font-weight: 700;
+}

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="songliststyle.css" ?>
+
+<SetList>
+    <Record>
+        <SongTitle>Work</SongTitle>
+
+        <Artists>
+            <ArtistName>Rihanna</ArtistName>
+        </Artists>
+
+        <MusicGenre>Hip Hop</MusicGenre>
+        <ReleaseYr>2016</ReleaseYr>
+    </Record>
+
+    <Record>
+        <SongTitle>Songs About Rain</SongTitle>
+
+        <Artists>
+            <ArtistName>Gary Allen</ArtistName>
+        </Artists>
+
+        <MusicGenre>Country</MusicGenre>
+        <ReleaseYr>2003</ReleaseYr>
+    </Record>
+
+    <Record>
+        <SongTitle>Stairway to Heaven</SongTitle>
+
+        <Artists>
+            <ArtistName>Led Zeppelin</ArtistName>
+        </Artists>
+
+        <MusicGenre>Rock</MusicGenre>
+        <ReleaseYr>1991</ReleaseYr>
+    </Record>
+
+    <Record>
+        <SongTitle>IDOL</SongTitle>
+
+        <Artists>
+            <ArtistName>BTS</ArtistName>
+            <FeatArtistName>Nicki Minaj</FeatArtistName>
+        </Artists>
+
+        <MultipleMusicGenre>Hip Hop/K-Pop</MultipleMusicGenre>
+        <ReleaseYr>2019</ReleaseYr>
+    </Record>
+
+    <Record>
+        <SongTitle>In Color</SongTitle>
+
+        <Artists>
+            <ArtistName>Jamey Johnson</ArtistName>
+        </Artists>
+
+        <MusicGenre>Country</MusicGenre>
+        <ReleaseYr>2008</ReleaseYr>
+    </Record>
+
+    <Record>
+        <SongTitle>Paranoid</SongTitle>
+
+        <Artists>
+            <ArtistName>Black Sabbath</ArtistName>
+        </Artists>
+
+        <MusicGenre>Rock</MusicGenre>
+        <ReleaseYr>1988</ReleaseYr>
+    </Record>
+
+    <Record>
+        <SongTitle>God's Plan</SongTitle>
+
+        <Artists>
+            <ArtistName>Drake</ArtistName>
+        </Artists>
+
+        <MusicGenre>Hip Hop</MusicGenre>
+        <ReleaseYr>2018</ReleaseYr>
+    </Record>
+
+    <Record>
+        <SongTitle>Take What You Want</SongTitle>
+
+        <Artists>
+            <ArtistName>Post Malone</ArtistName>
+            <MultipleArtistNameFeatArtistName>Ozzy Osburne,
+                Travis Scott</MultipleArtistNameFeatArtistName>
+        </Artists>
+
+        <MultipleMusicGenre>Rock/Hip Hop</MultipleMusicGenre>
+        <ReleaseYr>2019</ReleaseYr>
+    </Record>
+
+    <Record>
+        <SongTitle>Let Me Go</SongTitle>
+
+        <Artists>
+            <MultipleArtistName>Hailee Steinfeild, Alesso</MultipleArtistName>
+            <MultipleArtistNameFeatArtistName>Florida Georgia Line,
+                Watt</MultipleArtistNameFeatArtistName>
+        </Artists>
+
+        <MultipleMusicGenre>Country/Pop/EDM</MultipleMusicGenre>
+        <ReleaseYr>2017</ReleaseYr>
+    </Record>
+
+    <Record>
+        <SongTitle>The Bigger Picture</SongTitle>
+
+        <Artists>
+            <ArtistName>Lil Baby</ArtistName>
+        </Artists>
+
+        <MusicGenre>Hip Hop</MusicGenre>
+        <ReleaseYr>2020</ReleaseYr>
+    </Record>
+
+    <Record>
+        <SongTitle>The Boys Are Back in Town</SongTitle>
+
+        <Artists>
+            <ArtistName>Thin Lizzy</ArtistName>
+        </Artists>
+
+        <MusicGenre>Rock</MusicGenre>
+        <ReleaseYr>1991</ReleaseYr>
+    </Record>
+</SetList>
