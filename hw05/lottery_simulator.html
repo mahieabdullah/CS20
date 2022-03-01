@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Lottery Simulator</title>
+    </head>
+    <body style="text-align: center">
+        <h1>💰 Play Lottery Simulator For a Chance to Win Some Money! 💰</h1>
+        <script type="text/javascript">
+            //find winning lottery numbers
+            document.write("The winning lottery numbers are: <br />");
+            const w_lottery_num_array = [];
+            for (i = 0; i < 5; i++) {
+                random_int = Math.floor(Math.random() * 47) + 1; //int 1-48
+                // checks to see if current integer is already in the array
+                if (w_lottery_num_array.indexOf(random_int) === -1)
+                    w_lottery_num_array.push(random_int);
+                document.write(w_lottery_num_array[i] + " <br />");
+            }
+
+            //find winning lucky ball number
+            var w_lucky_ball = Math.floor(Math.random() * 17 + 1); //int 1-18
+            w_lottery_num_array.push(w_lucky_ball);
+            document.write("<br />The winning lucky ball number is: "
+                            + w_lucky_ball
+                            + "<hr>");
+
+            //get user numbers "or pick"
+            var user_pick =
+                prompt("Enter five distinct numbers that range from 1 to 48 " +
+                    "with spaces in between:");
+            var user_array = user_pick.split(" ");
+            document.write("The numbers you picked are:<br/>")
+            user_array = user_array.sort(function(a, b){return a-b});
+            for (i = 0; i < user_array.length; i++) {
+                document.write(user_array[i] + "<br />");
+            }
+
+            //get user winning ball number
+            var user_luckyball = prompt("Enter lucky ball number that " +
+                "ranges from 1 to 18:");
+            document.write("The lucky ball number you picked is: "
+                            + user_luckyball + "<br />");
+
+            //compare user pick with winning lottery numbers
+            var matches = 0;
+            for (i = 0; i < w_lottery_num_array.length; i++) {
+                for (j = 0; j < user_array.length; j++) {
+                    if (w_lottery_num_array[i] == user_array[j]) {
+                        matches++;
+                    }
+                }
+            }
+            document.write("<br />You have " + matches + " matches!");
+
+            // compare user lucky ball with winning lucky ball
+            if (user_luckyball == w_lucky_ball) {
+                document.write("<br />Congrats! Your lucky ball matched!")
+            }
+
+            //calculate payout
+            if ((matches == 5) && (user_luckyball == w_lucky_ball)) {
+                document.write("<br />Congrats! You won $7,000 a WEEK for "
+                + "LIFE!");
+            } else if ((matches == 5) && (user_luckyball != w_lucky_ball)) {
+                document.write("<br />Congrats! You won $25,000 a YEAR for "
+                + "LIFE!");
+            } else if ((matches == 4) && (user_luckyball == w_lucky_ball)) {
+                document.write("<br />Congrats! You won $5,000!");
+            } else if ((matches == 4) && (user_luckyball != w_lucky_ball)) {
+                document.write("<br />Congrats! You won $200!");
+            } else if ((matches == 3) && (user_luckyball == w_lucky_ball)) {
+                document.write("<br />Congrats! You won $150!");
+            } else if ((matches == 3) && (user_luckyball != w_lucky_ball)) {
+                document.write("<br />Congrats! You won $20!");
+            } else if ((matches == 2) && (user_luckyball == w_lucky_ball)) {
+                document.write("<br />Congrats! You won $25!");
+            } else if ((matches == 2) && (user_luckyball != w_lucky_ball)) {
+                document.write("<br />Congrats! You won $3!");
+            } else if ((matches == 1) && (user_luckyball == w_lucky_ball)) {
+                document.write("<br />Congrats! You won $6!");
+            } else if ((matches == 0) && (user_luckyball == w_lucky_ball)) {
+                document.write("<br />Congrats! You won $4!");
+            }
+        </script>
+    </body>
+</html>
