@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Amicable Numbers</title>
+
+        <style>
+            input {
+              padding: 12px 20px;
+              display: inline-block;
+              margin: 8px 0;
+              border-radius: 4px;
+              box-sizing: border-box;
+              width: 300px;
+              border: 1px solid #ccc;
+            }
+        </style>
+
+        <script type="text/javascript">
+            //Given an integer, return all its factors inside an array
+            function find_factors(num) {
+                let all_factors_array = [];
+                for (i = 0; i < num; i++) {
+                    if (num % i == 0) {
+                        all_factors_array.push(i);
+                    }
+                }
+                return all_factors_array;
+            }
+
+            //Given an array of ints, return the sum of all the numbers
+            function sum_array(array) {
+                return array.reduce(function(a,b) {return a+b});
+            }
+
+            //Find whether two numbers are amicable or not
+            function find_amicable() {
+                first_num = document.getElementById("first-num").value;
+                second_num = document.getElementById("second-num").value;
+
+                let factorarray1 = find_factors(first_num);
+                let factorarray2 = find_factors(second_num);
+                let factorsum1 = sum_array(factorarray1);
+                let factorsum2 = sum_array(factorarray2);
+
+                if ((factorsum1 == second_num) && (factorsum2 == first_num)) {
+                    document.getElementById("output").innerHTML =
+                                                "The numbers are amicable.";
+                } else {
+                    document.getElementById("output").innerHTML =
+                                            "The numbers are not amicable.";
+                }
+
+                document.getElementById("all-factors").innerHTML =
+                            "First number factors: " + factorarray1
+                            + "<br/>Second number factors: " + factorarray2;
+            }
+        </script>
+    </head>
+
+    <body style="text-align: center">
+        <h1>🔢 Welcome to the Amicable Numbers Simulator! 🔢</h1>
+        <h2>Please enter two numbers to check if they are amicable</h2>
+
+        <input type="number" id="first-num" placeholder="First number"
+                                                        required="1" /> <br/>
+        <input type="number" id="second-num" placeholder="Second number"
+                                                        required="1" /><br/>
+        <input type="submit" value="Check" onclick="find_amicable()">
+
+        <div id="output">
+            &nbsp;
+        </div>
+        <div id="all-factors">
+            &nbsp;
+        </div>
+    </body>
+</html>
