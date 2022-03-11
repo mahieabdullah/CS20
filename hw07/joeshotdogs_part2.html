@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Joe's Hotdogs!</title>
+        <script
+          src="https://code.jquery.com/jquery-3.6.0.js"
+          integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+          crossorigin="anonymous"></script>
+        <style>
+            #error {
+                color: red;
+                display: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <script type="text/javascript">
+            function MenuItem(name, cost)
+            {
+            	this.name = name;
+            	this.cost = cost;
+            }
+
+            menuItems = new Array(
+            	new MenuItem("🌭 Hot Dogs", 3.25),
+            	new MenuItem("🍟 French Fries", 2.00),
+            	new MenuItem("🥤 Soda", 1.50),
+            );
+
+            function makeSelect(name, minRange, maxRange)
+            {
+            	var t = "";
+                quantities = [0, 1, 2, 3, 4, 5, 10, 15, 20];
+            	t = "<select id='" + name + "' size='1'>";
+            	for (j = minRange; j <= maxRange; j++)
+            	   t += "<option>" + quantities[j] + "</option>";
+            	t += "</select>";
+            	return t;
+            }
+
+            function validate() {
+                err = false;
+                document.getElementById("error").style.display = "none";
+                let total = 0;
+                let amount = 0;
+
+                $("select").each(function () {
+                    amount = $(this).find(':selected').text();
+                    total += parseInt(amount);
+                })
+
+                if (total == 0) {
+                    document.getElementById("error").style.display = "block";
+                    err = true;
+                }
+
+                if (err == false) {
+                    let subtotal = 0;
+                    let menuitems = "";
+                    for (i = 0; i < menuItems.length; i++) {
+                        let tableRow = $('.itemtable tr').eq(i+1);
+                        let selectedAmt = tableRow.find(':selected').text();
+                        menuitems += selectedAmt + " ";
+                        menuitems += menuItems[i].name + "<br/>";
+
+                        let itemtotal = menuItems[i].cost * parseInt(selectedAmt);
+                        subtotal += itemtotal;
+                    }
+
+                    if (subtotal > 20)
+                    {
+                        subtotal = .9 * subtotal;
+                        alert("You apply for Joe's special! " +
+                        "Your new subtotal is $" + subtotal.toFixed(2));
+                    }
+
+                    tax = .0625 * subtotal;
+                    total = subtotal + tax;
+
+                    DispWin = window.open('', 'TheWindow');
+                    DispWin.document.write(
+                        "Thank you for your order! <br/>" + menuitems
+                        + "<br/>Subtotal: $" + subtotal.toFixed(2)
+                        + "<br/>Tax: $" + tax.toFixed(2)
+                        + "<br/>Total: $" + total.toFixed(2)
+                    );
+                    DispWin.opener.document.write(
+                        '<input type="button" value="Place a new order" onClick="window.location.reload();DispWin.close();">'
+                    );
+                }
+
+                return !err;
+            }
+        </script>
+
+        <h1 style="text-align: center">🌭 Welcome to Joe's Hotdogs! 🌭</h1>
+        <h2 style="text-decoration: underline;">Here Is Our Menu For Today:</h2>
+        <div style="font-size: 20px;">
+            <form
+                name="data"
+                method="post"
+                onsubmit="return validate()"
+            >
+                <table class="itemtable" border="0" cellpadding="3">
+                    <tr>
+                        <th>Select Item</th>
+                        <th>Item Name</th>
+                        <th>Cost Each</th>
+                    </tr>
+                    <script language="javascript">
+                      var s = "";
+                      for (i = 0; i < menuItems.length; i++)
+                      {
+                    	  s += "<tr><td>";
+                    	  s += makeSelect("quan" + i, 0, 8);
+                    	  s += "</td><td>" + menuItems[i].name + "</td>";
+                    	  s += "<td> $ " + menuItems[i].cost.toFixed(2) + "</td>";
+                      }
+                      document.writeln(s);
+                    </script>
+                </table>
+                <div id="error">Please choose an option</div>
+
+                <br /><input type="submit" id="submitbtn">
+            </form>
+        </div>
+
+        <hr>
+    </body>
+</html>
