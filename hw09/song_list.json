@@ -1,15 +1,15 @@
 [
     {
-    "name": "Work",
-    "artist": ["Rihanna"],
-    "genre": "Hip-Hop",
-    "year": "2016"
+    "name": "Bodak Yellow",
+    "artist": ["Cardi B"],
+    "genre": "Hip-Hop/Rap",
+    "year": "2018"
     },
     {
-    "name": "Songs About Rain",
-    "artist": ["Gary Allen"],
-    "genre": "Country",
-    "year": "2003"
+    "name": "My Girl",
+    "artist": ["The Temptations"],
+    "genre": "R&B/Soul",
+    "year": "1965"
     },
     {
     "name": "Stairway to Heaven",
@@ -18,16 +18,16 @@
     "year": "1991"
     },
     {
-    "name": "Can't Fell My Face",
+    "name": "Can't Feel My Face",
     "artist": ["The Weekend"],
     "genre": "Pop",
     "year": "2015"
     },
     {
-    "name": "In Color",
-    "artist": ["Jamey Johnson"],
-    "genre": "Country",
-    "year": "2008"
+    "name": "I'll Take You There",
+    "artist": ["The Staple Singers"],
+    "genre": "R&B/Soul",
+    "year": "1972"
     },
     {
     "name": "Paranoid",
@@ -36,10 +36,10 @@
     "year": "1988"
     },
     {
-    "name": "God's Plan",
-    "artist": ["Drake"],
-    "genre": "Hip-Hop",
-    "year": "2018"
+    "name": "RAPSTAR",
+    "artist": ["Polo G"],
+    "genre": "Hip-Hop/Rap",
+    "year": "2021"
     },
     {
     "name": "Moves Like Jagger",
@@ -54,10 +54,10 @@
     "year": "2018"
     },
     {
-    "name": "The Bigger Picture",
-    "artist": ["Lil Baby"],
-    "genre": "Hip-Hop",
-    "year": "2020"
+    "name": "pushin P",
+    "artist": ["Gunna"],
+    "genre": "Hip-Hop/Rap",
+    "year": "2022"
     },
     {
     "name": "Blue Green",
