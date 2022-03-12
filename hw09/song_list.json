@@ -1,0 +1,68 @@
+[
+    {
+    "name": "Work",
+    "artist": ["Rihanna"],
+    "genre": "Hip-Hop",
+    "year": "2016"
+    },
+    {
+    "name": "Songs About Rain",
+    "artist": ["Gary Allen"],
+    "genre": "Country",
+    "year": "2003"
+    },
+    {
+    "name": "Stairway to Heaven",
+    "artist": ["Led Zeppelin"],
+    "genre": "Rock",
+    "year": "1991"
+    },
+    {
+    "name": "Can't Fell My Face",
+    "artist": ["The Weekend"],
+    "genre": "Pop",
+    "year": "2015"
+    },
+    {
+    "name": "In Color",
+    "artist": ["Jamey Johnson"],
+    "genre": "Country",
+    "year": "2008"
+    },
+    {
+    "name": "Paranoid",
+    "artist": ["Black Sabbath"],
+    "genre": "Rock",
+    "year": "1988"
+    },
+    {
+    "name": "God's Plan",
+    "artist": ["Drake"],
+    "genre": "Hip-Hop",
+    "year": "2018"
+    },
+    {
+    "name": "Moves Like Jagger",
+    "artist": ["Maroon 5"],
+    "genre": "Pop",
+    "year": "2010"
+    },
+    {
+    "name": "A Night In Tunisia",
+    "artist": ["Dizzy Gillespie", "Charlie Parker"],
+    "genre": "Jazz",
+    "year": "2018"
+    },
+    {
+    "name": "The Bigger Picture",
+    "artist": ["Lil Baby"],
+    "genre": "Hip-Hop",
+    "year": "2020"
+    },
+    {
+    "name": "Blue Green",
+    "artist": ["Miles Davis", "Bill Evans"],
+    "genre": "Jazz",
+    "year": "1959"
+    }
+]
