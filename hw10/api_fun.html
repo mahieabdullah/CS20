@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Api Fun: Music Genre Generator</title>
+    	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script>
+            function getGenre1() {
+                var request = new XMLHttpRequest();
+
+                request.open("GET", "https://binaryjazz.us/wp-json/genrenator/v1/genre/", true);
+
+                request.onreadystatechange = function() {
+                    if ((request.readyState == 4) && (request.status == 200)) {
+                        data = request.responseText;
+                        document.getElementById("genre1").innerHTML = data;
+                    }
+                };
+
+                request.send();
+            }
+
+            async function getGenre2() {
+                fetch("https://binaryjazz.us/wp-json/genrenator/v1/genre/", {
+                    method: 'GET'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("genre2").innerHTML = data;
+                })
+                .catch((error) => {
+                    console.error('Error', error)
+                })
+            }
+
+            function getGenres() {
+                getGenre1();
+                getGenre2();
+            }
+
+        </script>
+    </head>
+    <body onload="getGenres()" style="text-align: center">
+        Bored of listening to the same music genres? Why don't you listen to these two genres: <div id="genre1"></div><div id="genre2"></div>
+
+        <div>
+            <ul style='list-style-type:none'>
+                <li>The API returns random music genres.</li>
+                <li>The API can be found at https://binaryjazz.us/genrenator-api/</li>
+                <li>There are two options for the API. One of them is a genre generator (which I chose) and the other one is a story generator.</li>
+                <li>This API would be helpful for a) a radio app that shares new daily music genres for its customers to listen to and b) a website for a DJ to choose new music everytime a request is made at a party. </li>
+            </ul>
+        </div>
+    </body>
+</html>
