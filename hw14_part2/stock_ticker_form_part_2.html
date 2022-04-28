@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style media="screen">
+        body {background-color: powderblue;}
+    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Company</title>
+  </head>
+  <style>
+    main {
+      padding-left: 1rem;
+    }
+    .radio-wrapper {
+      display: flex;
+      align-content: center;
+    }
+    label {
+      margin-right: 1rem;
+    }
+    .input-wrapper {
+      margin-top: 1rem;
+    }
+    button {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    .result {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+  <body>
+    <main>
+      <h1>📈 STOCK TICKER APP 📉</h1>
+      <h3>Please choose either a Company Name or Company Ticker to learn more:</h3>
+      <!-- <form> -->
+      <div class="radio-wrapper">
+        <input type="radio" id="comp_name" name="type" value="name" checked />
+        <label for="comp_name">Company Name 🏢</label>
+
+        <input type="radio" id="comp_ticker" name="type" value="ticker" />
+        <label for="comp_ticker">Company Ticker 🔤</label>
+      </div>
+      <div class="input-wrapper">
+        <input
+          type="text"
+          name="inp"
+          id="inp"
+          placeholder="Search something..."
+        />
+      </div>
+      <button id="btn">Search</button>
+      <!-- </form> -->
+      <div id="result"></div>
+    </main>
+  </body>
+  <script>
+    // const form = document.querySelector("form");
+    const btn = document.querySelector("button");
+    const result = document.querySelector("#result");
+
+    btn.addEventListener(
+      "click",
+      (event) => {
+        btn.disabled = true;
+        const type = document.querySelector('input[name="type"]:checked');
+        const term = document.querySelector('input[type="text"]');
+
+        const query = {
+          type: type.value,
+          term: term.value,
+        };
+
+        fetch("https://get-company.herokuapp.com/search?" + new URLSearchParams(query), {
+          method: "get",
+        })
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => {
+            let out = "";
+            if (!data.length) {
+              out = `No data was found.`;
+              result.innerHTML = out;
+              btn.disabled = false;
+              return;
+            }
+            let i = 0;
+            const extract = data.splice(0, data.length / 6);
+            extract.forEach((e) => {
+                out += `<div class='result'><strong>Company Name: </strong>${e.company}<strong> Company Ticker: </strong>${e.ticker}</div>`;
+            });
+            result.innerHTML = out;
+            btn.disabled = false;
+          });
+
+        event.stopImmediatePropagation();
+        event.preventDefault();
+      },
+      false
+    );
+
+    btn.disabled = false;
+  </script>
+</html>
